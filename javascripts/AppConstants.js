@@ -1,4 +1,4 @@
-myApp.constant("FIREBASE_CONFIG", {
+app.constant("FIREBASE_CONFIG", {
   "apiKey": "AIzaSyCYDww-_kQ4uVbHB2tspD8Wtfd0Ods3MvU",
   "authDomain": "addres-book-43d93.firebaseapp.com",
   "databaseURL": "https://addres-book-43d93.firebaseio.com",

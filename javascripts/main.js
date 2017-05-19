@@ -1,17 +1,17 @@
-myApp.controller("AddressApp", function($scope, AddressFactory){
-  $scope.addresses = [];
+app.controller("AddressController", function($scope, AddressFactory) {
 
-  let getAddr = () => {
-    AddressFactory.getAddress().then((addr) => {
-      console.log("addresses", addr);
+  $scope.address = [];
+
+
+  let getItems = () => {
+    AddressFactory.addressList().then((addresses) => {
+      $scope.address = addresses;
     }).catch((error) => {
-      console.log("get adr error", error);
+      console.log("get error", error);
     });
   };
-  getAddr();
 
-
-
+  getItems();
 
 
 });

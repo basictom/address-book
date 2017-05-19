@@ -1,3 +1,3 @@
-myApp.run(function(FIREBASE_CONFIG) {
+app.run(function(FIREBASE_CONFIG) {
   firebase.initializeApp(FIREBASE_CONFIG);
 });

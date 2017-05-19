@@ -1,16 +1,19 @@
 {
     "addresses": {
-        "129 Drury Lane": {
+        "id0": {
+            "street":"129 Drury Lane",
             "traveledTo": true,
             "town": "Fairy Land",
             "zipCode": "01234"
         },
-        "81 Hobson Street": {
+        "id1": {
+            "street":"81 Hobson Street",
             "traveledTo": false,
             "town": "Brighton",
             "zipCode": "02135"
         },
-        "59 Langley Road": {
+        "id2": {
+            "street":"81 Hobson Street",
             "traveledTo": false,
             "town": "Nashville",
             "zipCode": "37208"
