@@ -5,15 +5,13 @@ body {
   font-family: $bodyfont;
 }
 
-.false {
-  background-color: $false;
+.contact {
+  background-color: $bgcolor;
   padding: 5px;
   margin: 5px;
   color: $bodycolor;
 }
-.true {
-  background-color: $true;
-  padding: 5px;
-  margin: 5px;
-  color: $bodycolor;
+
+.panel {
+  border: none;
 }

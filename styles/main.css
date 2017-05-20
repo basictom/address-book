@@ -1,14 +1,11 @@
 body {
   font-family: Trebuchet, Helvetica, sans-serif; }
 
-.false {
+.contact {
   background-color: cornflowerblue;
   padding: 5px;
   margin: 5px;
   color: #fbfbfb; }
 
-.true {
-  background-color: crimson;
-  padding: 5px;
-  margin: 5px;
-  color: #fbfbfb; }
+.panel {
+  border: none; }

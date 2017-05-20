@@ -15,12 +15,9 @@ app.controller("AddressController", function($q, $http, $scope, AddressFactory, 
 
 
   $scope.addNew = () => {
-    console.log("click");
   AddressFactory.postNewAddress($scope.newAddress)
     .then((returns) => {
-      console.log("add new", returns);
       $scope.newAddress = {returns};
-      console.log($scope.newAddress);
       getAddresses();
     }).catch((error) => {
       console.log("Add error", error);

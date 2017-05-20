@@ -10,8 +10,10 @@
 
   <div class="container">
     <div class="row">
+
       <h1>Address Book</h1>
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-8">
+        <button class="btn btn-primary btn-warning">Click here to add new contact!</button>
       </div>
     </div>
   </div>
@@ -22,14 +24,15 @@
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2">
         <div class="add">
-          <div class="new-fields">
+          <div class="new-fields hide">
+            <input type="text" class="form-control" placeholder="Full Name" ng-model="newAddress.name" />
+            <input type="text" class="form-control" placeholder="Phone Number" ng-model="newAddress.phoneNumber" />
             <input type="text" class="form-control" placeholder="Street Address" ng-model="newAddress.street"/>
             <input type="text" class="form-control" placeholder="City/Town Name" ng-model="newAddress.town"/>
             <input type="text" class="form-control" placeholder="Zip Code" ng-model="newAddress.zipCode" />
-            <input type="checkbox" class="" ng-model="newAddress.traveledTo" />Have you traveled here?<br/>
 
           </br/>
-            <button class="btn btn-primary danger" ng-click="addNew()">Add New Address <span class="fa fa-plus-circle"></span></button>
+            <button class="btn btn-primary danger" ng-click="addNew()">Add New Contact <span class="fa fa-plus-circle"></span></button>
           </div>
           <!-- <h2>Add New Address <a href="" class="fa fa-plus-circle"></a></h2> -->
         </div>
@@ -37,23 +40,26 @@
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="panel col-xs-6">
-          <h3>Places I have been</h3>
-          <div class="true" ng-repeat="address in address | filter:{traveledTo:true}">
+        <div class="container">
+          <div class="panel col-xs-6" ng-repeat="address in address">
+            <div class="col-xs-12 contact">
+              <div class="col-xs-2">
+                <img src="https://www.goarch.org/documents/32058/2221795/Silhouette+Man/07259aea-9b9b-4802-81a9-b339a150458e?t=1479138239000"width="150" />
+              </div>
+              <div class="col-xs-2">
 
-            <!-- <div class="col-xs-1">
-
-            </div> -->
-
-            <p>{{address.street}}{{address.town}}{{address.zipCode}}<button class="btn btn-primary btn-danger fa fa-trash-o" ng-click="deleteAddress(address.id)"></button></p>
-            <p class="hide">{{address.traveledTo}}</p>
-          </div>
-        </div>
-        <div class="panel col-xs-6">
-          <h3>Places I would like to have been</h3>
-          <div class="false" ng-repeat="address in address | filter:{traveledTo:false}">
-            <p>{{address.street}}{{address.town}}{{address.zipCode}}<button class="btn btn-primary btn-danger fa fa-trash-o" ng-click="deleteAddress(address.id)"></button></p>
-            <p class="hide">{{address.traveledTo}}</p>
+              </div>
+              <div class="col-xs-6">
+                <h4>{{address.name}}</h4>
+                <p>{{address.phoneNumber}}</p>
+                <p>{{address.street}}</p>
+                <p>{{address.town}}</p>
+                <p>{{address.zipCode}}</p>
+              </div>
+              <div class="col-xs-2 pull-right">
+                <button class="pull-right btn btn-primary btn-danger fa fa-window-close-o" ng-click="deleteAddress(address.id)"></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

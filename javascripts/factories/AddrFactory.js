@@ -24,7 +24,6 @@ app.factory("AddressFactory", function($q, $http, FIREBASE_CONFIG){
 
 
   let postNewAddress = (newAddress) => {
-    console.log("post function");
     return $q((resolve, reject) => {
       $http.post(`${FIREBASE_CONFIG.databaseURL}/addresses.json`, JSON.stringify(newAddress))
       .then((result) => {
