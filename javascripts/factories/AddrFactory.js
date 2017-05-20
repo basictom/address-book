@@ -23,6 +23,18 @@ app.factory("AddressFactory", function($q, $http, FIREBASE_CONFIG){
   };
 
 
+  let postNewAddress = (newAddress) => {
+    console.log("post function");
+    return $q((resolve, reject) => {
+      $http.post(`${FIREBASE_CONFIG.databaseURL}/addresses.json`, JSON.stringify(newAddress))
+      .then((result) => {
+        resolve(result);
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  };
+
   // let getSingleAddress = (id) => {
   //   return $q((resolve, reject) => {
   //     $http.get(`${FIREBASE_CONFIG.databaseURL}/items/${id}.json`)
@@ -36,9 +48,5 @@ app.factory("AddressFactory", function($q, $http, FIREBASE_CONFIG){
   //   });
   // };
 
-
-// getSingleAddress:getSingleAddress
-
-
-  return {addressList:addressList,};
+  return {addressList:addressList, postNewAddress:postNewAddress};
 });

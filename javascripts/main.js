@@ -1,4 +1,4 @@
-app.controller("AddressController", function($scope, AddressFactory) {
+app.controller("AddressController", function($q, $http, $scope, AddressFactory, FIREBASE_CONFIG) {
 
   $scope.address = [];
 
@@ -12,6 +12,20 @@ app.controller("AddressController", function($scope, AddressFactory) {
   };
 
   getItems();
+
+
+  $scope.addNew = () => {
+    console.log("click");
+  AddressFactory.postNewAddress($scope.newAddress)
+  .then((returns) => {
+    console.log("add new", returns);
+    $scope.newAddress = {};
+    getItems();
+    //switch views here
+  }).catch((error) => {
+    console.log("Add error", error);
+  });
+};
 
 
 });

@@ -20,11 +20,27 @@
     </div>
   </div>
 
+
+
   <div class="container" ng-controller="AddressController">
-    <div class="row" ng-repeat="address in address">
+    <div class="row">
       <div class="col-xs-8 col-xs-offset-2">
-        <div class="panel">
-          {{address.street}}
+        <div class="add">
+          <div class="new-fields">
+            <input type="text" class="form-control" placeholder="Street Address" ng-model="newAddress.address"/>
+            <!-- <input type="text" class="form-control" placeholder="City/Town Name" ng-model="newAddress.address"/>
+            <input type="text" class="form-control" placeholder="Zip Code" ng-model="newAddress.address" />
+            <input type="checkbox" class="form-control" ng-model="newAddress.address" />Have you traveled here? -->
+            <button class="btn btn-primary danger" ng-click="addNew()">Add New Address <span class="fa fa-plus-circle"></span></button>
+          </div>
+          <!-- <h2>Add New Address <a href="" class="fa fa-plus-circle"></a></h2> -->
+        </div>
+        <div class="panel" ng-repeat="address in address">
+          <p ng-cloak>{{address.street}}</p>
+          <p ng-cloak>{{address.town}}</p>
+          <p ng-cloak>{{address.zipCode}}</p>
+          <p ng-cloak>{{address.traveledTo}}</p>
+        </br/>
         </div>
       </div>
     </div>
@@ -45,6 +61,7 @@
   <script src="./javascripts/AppConstants.js"></script>
 
   <script src="./javascripts/factories/AddrFactory.js"></script>
+
   <script src="./javascripts/main.js"></script>
 
   <!-- <script src="./javascripts/controllers/item-edit-ctrl.js"></script>
