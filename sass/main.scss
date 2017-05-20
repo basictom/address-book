@@ -1,0 +1,19 @@
+@import "colors";
+@import "fonts";
+
+body {
+  font-family: $bodyfont;
+}
+
+.false {
+  background-color: $false;
+  padding: 5px;
+  margin: 5px;
+  color: $bodycolor;
+}
+.true {
+  background-color: $true;
+  padding: 5px;
+  margin: 5px;
+  color: $bodycolor;
+}

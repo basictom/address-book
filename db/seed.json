@@ -1,5 +1,4 @@
 {
-    "addresses": {
         "id0": {
             "street":"129 Drury Lane",
             "traveledTo": true,
@@ -13,10 +12,9 @@
             "zipCode": "02135"
         },
         "id2": {
-            "street":"81 Hobson Street",
+            "street":"52 Langley",
             "traveledTo": false,
             "town": "Nashville",
             "zipCode": "37208"
         }
-    }
 }

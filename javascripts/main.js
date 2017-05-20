@@ -3,7 +3,7 @@ app.controller("AddressController", function($q, $http, $scope, AddressFactory, 
   $scope.address = [];
 
 
-  let getItems = () => {
+  let getAddresses = () => {
     AddressFactory.addressList().then((addresses) => {
       $scope.address = addresses;
     }).catch((error) => {
@@ -11,21 +11,30 @@ app.controller("AddressController", function($q, $http, $scope, AddressFactory, 
     });
   };
 
-  getItems();
+  getAddresses();
 
 
   $scope.addNew = () => {
     console.log("click");
   AddressFactory.postNewAddress($scope.newAddress)
-  .then((returns) => {
-    console.log("add new", returns);
-    $scope.newAddress = {};
-    getItems();
-    //switch views here
-  }).catch((error) => {
-    console.log("Add error", error);
-  });
-};
+    .then((returns) => {
+      console.log("add new", returns);
+      $scope.newAddress = {returns};
+      console.log($scope.newAddress);
+      getAddresses();
+    }).catch((error) => {
+      console.log("Add error", error);
+    });
+  };
+
+  $scope.deleteAddress = (id) => {
+    console.log("delete", id);
+    AddressFactory.deleted(id).then(() => {
+      getAddresses();
+    }).catch((error) => {
+      console.log("delete", error);
+    });
+  };
 
 
 });

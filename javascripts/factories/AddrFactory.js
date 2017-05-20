@@ -35,18 +35,17 @@ app.factory("AddressFactory", function($q, $http, FIREBASE_CONFIG){
     });
   };
 
-  // let getSingleAddress = (id) => {
-  //   return $q((resolve, reject) => {
-  //     $http.get(`${FIREBASE_CONFIG.databaseURL}/items/${id}.json`)
-  //     .then((results) => {
-  //       results.data.id = id;
-  //       console.log(results);
-  //       resolve(results);
-  //     }).catch((error) => {
-  //       reject(error);
-  //     });
-  //   });
-  // };
+  let deleted = (addressId) => {
+    // console.log(address)
+    return $q((resolve, reject) => {
+      $http.delete(`${FIREBASE_CONFIG.databaseURL}/addresses/${addressId}.json`)
+      .then((results) => {
+        resolve(results);
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  };
 
-  return {addressList:addressList, postNewAddress:postNewAddress};
+  return {addressList:addressList, postNewAddress:postNewAddress, deleted:deleted};
 });
