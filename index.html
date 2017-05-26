@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Address Book</title>
+  <title>Angular</title>
   <link rel="stylesheet" href="./lib/bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./styles/main.css" />
 </head>
-<body>
+<body ng-app="AddressApp">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 align-center">
+        <h1>Address Book</h1>
+        <button class="btn btn-primary btn-warning">Click here to add new contact!</button>
+      </div>
+    </div>
+  </div>
 
 
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12" ng-view>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -20,6 +35,22 @@
   crossorigin="anonymous"></script>
   <script src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
   <script src="./lib/bower_components/angular/angular.min.js"></script>
+  <script src="./lib/bower_components/angular-route/angular-route.min.js"></script>
   <!-- <script src="./lib/bower_components/angular-route/angular-route.min.js"></script> -->
+
+  <script src="./javascripts/app.js"></script>
+  <script src="./javascripts/app-config.js"></script>
+  <script src="./javascripts/AppConstants.js"></script>
+
+  <script src="./javascripts/factories/AddrFactory.js"></script>
+  <script src="./javascripts/factories/AuthFactory.js"></script>
+  <script src="./javascripts/factories/UserFactory.js"></script>
+
+  <!-- <script src="./javascripts/main.js"></script> -->
+  <script src="./javascripts/controllers/auth.js"></script>
+  <script src="./javascripts/controllers/contacts.js"></script>
+  <script src="./javascripts/controllers/add-new.js"></script>
+  <script src="./javascripts/controllers/edit-contact.js"></script>
+
 </body>
 </html>

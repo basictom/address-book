@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="container">
+      <div class="panel col-xs-6" ng-repeat="address in address">
+        <div class="col-xs-12 contact">
+          <div class="col-xs-2">
+            <img src="https://www.goarch.org/documents/32058/2221795/Silhouette+Man/07259aea-9b9b-4802-81a9-b339a150458e?t=1479138239000"width="150" />
+          </div>
+          <div class="col-xs-2">
+
+          </div>
+          <div class="col-xs-6">
+            <h4>{{address.name}}</h4>
+            <p>{{address.phoneNumber}}</p>
+            <p>{{address.street}}</p>
+            <p>{{address.town}}</p>
+            <p>{{address.zipCode}}</p>
+          </div>
+          <div class="col-xs-2 pull-right">
+            <button class="pull-right btn btn-primary btn-danger fa fa-window-close-o" ng-click="deleteAddress(address.id)"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
