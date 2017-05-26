@@ -1,9 +1,9 @@
 app.controller("AuthCtrl", function($rootScope, $scope, $location, FIREBASE_CONFIG, AuthFactory, UserFactory){
   $scope.alerts = [];
-  $scope.auth = {
-    email: "a@a.com",
-    password: "123456"
-  };
+  // $scope.auth = {
+  //   email: "a@a.com",
+  //   password: "123456"
+  // };
 
   if($location.path() === '/logout'){
     AuthFactory.logout();
