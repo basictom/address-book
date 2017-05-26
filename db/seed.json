@@ -1,23 +1,34 @@
 {
+    "contacts": {
         "id0": {
             "name":"The Muffin Man",
             "phoneNumber":"781.134.2349",
             "street":"129 Drury Lane",
             "town": "Fairy Land",
-            "zipCode": "01234"
+            "zipCode": "01234",
+            "uid": "QmnktYIuVNR7FOe0A6PnOcugA1e2"
         },
         "id1": {
             "name":"Kenny Powers",
             "phoneNumber":"781.134.2349",
             "street":"81 Hobson Street",
             "town": "Brighton",
-            "zipCode": "02135"
+            "zipCode": "02135",
+            "uid": "QmnktYIuVNR7FOe0A6PnOcugA1e2"
         },
         "id2": {
             "name":"Charlie Kelly",
             "phoneNumber":"781.134.2349",
             "street":"52 Langley",
             "town": "Nashville",
-            "zipCode": "37208"
+            "zipCode": "37208",
+            "uid": "QmnktYIuVNR7FOe0A6PnOcugA1e2"
         }
+    },
+    "users": {
+      "user0": {
+        "uid": "QmnktYIuVNR7FOe0A6PnOcugA1e2",
+        "username": "qwer"
+      }
+    }
 }

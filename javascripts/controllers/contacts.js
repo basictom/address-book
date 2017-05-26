@@ -5,8 +5,8 @@ app.controller("AddressController", function($scope, AddressFactory, FIREBASE_CO
 
   let getAddresses = () => {
     AddressFactory.addressList().then((addresses) => {
+      console.log("address factory", addresses);
       $scope.address = addresses;
-      $scope.showForm = false;
     }).catch((error) => {
       console.log("get error", error);
     });

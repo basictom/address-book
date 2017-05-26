@@ -6,6 +6,7 @@ app.factory("AddressFactory", function($q, $http, FIREBASE_CONFIG){
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/addresses.json`)
       .then((adItems) => {
+        console.log("address list", adItems);
           let addressesCollection = adItems.data;
           console.log(addressesCollection);
           // if(addressesCollection !== null){

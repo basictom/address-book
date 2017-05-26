@@ -13,11 +13,12 @@ app.controller("AuthCtrl", function($rootScope, $scope, $location, FIREBASE_CONF
 
   let logMeIn = () => {
     AuthFactory.authenticate($scope.auth).then((userCreds) => {
-      // console.log("user creds", userCreds);
+      console.log("user creds", userCreds);
       return UserFactory.getUser(userCreds.uid);
     }, (error) => {
       $scope.alerts.push({msg: error.message});
     }).then((user) => {
+      console.log("user", user);
       $rootScope.user = user;
       $location.url('/contacts');
     }).catch((error) => {
